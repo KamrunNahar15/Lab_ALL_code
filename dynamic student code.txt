@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+class student{
+private:
+string name;
+int id;
+float cgpa;
+public:
+void input()
+{
+    cout<<"Enter Student Name:";
+    cin>>name;
+    cout<<"Enter Student ID:";
+    cin>>id;
+    cout<<"Enter cgpa:";
+    cin>>cgpa;
+}
+void display()
+{
+    cout<<"Name:"<<name<<endl;
+    cout<<"id:"<<id<<endl;
+    cout<<"cgpa:"<<cgpa<<endl;
+}
+
+};
+int main()
+{
+    int n;
+    cout<<"Enter numbers of students : ";
+    cin>>n;
+ student *s = new student[n];
+ for(int i=0;i<n;i++)
+ {
+     cout<<"Enter details of student " <<i+1;
+     s[i].input();
+
+ }
+ cout<<"Student Details"<<endl;
+ for(int i=0;i<n;i++)
+ {
+     s[i].display();
+ }
+ delete[]s;
+ return 0;
+
+}
